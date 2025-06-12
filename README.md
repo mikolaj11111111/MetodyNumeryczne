@@ -106,8 +106,8 @@ ctest
 #### Metoda 1: PowerShell/Command Prompt
 ```bash
 cd ścieżka_do_projektu/out/build/x64-Debug
-.\example_interpolation.exe
 .\example_linear_systems.exe
+.\example_interpolation.exe
 ```
 
 #### Metoda 2: File Explorer
