@@ -120,32 +120,6 @@ cd ścieżka_do_projektu/out/build/x64-Debug
 - **example_interpolation.cpp** - demonstracja interpolacji wielomianowej
 - **example_linear_systems.cpp** - rozwiązywanie układów równań liniowych
 
-## Rozwiązywanie problemów
-
-### Problem: Błąd "M_PI niezadeklarowany"
-**Rozwiązanie:** Dodaj na górze pliku przed #include:
-```cpp
-#define _USE_MATH_DEFINES
-```
-
-### Problem: "Cannot find source file: main.cpp"
-**Rozwiązanie:** Usuń z CMakeLists.txt linie odnoszące się do main.cpp
-
-### Problem: Błędy LNK2005 (wielokrotne definicje main)
-**Rozwiązanie:** Użyj poprawionej wersji CMakeLists.txt, która tworzy osobne programy dla każdego testu
-
-### Problem: PowerShell nie rozpoznaje .exe
-**Rozwiązanie:** Użyj `.\nazwa_programu.exe` zamiast `nazwa_programu.exe`
-
-## Makefile (alternatywnie)
-
-Jeśli preferujesz kompilację przez Makefile:
-```bash
-make clean       # Wyczyść pliki
-make all         # Zbuduj bibliotekę i testy
-make test        # Uruchom testy
-```
-
 ## Struktura plików
 
 ### Pliki nagłówkowe (include/)
@@ -166,9 +140,3 @@ make test        # Uruchom testy
 ### Przykłady (examples/)
 - `example_interpolation.cpp` - demo interpolacji
 - `example_linear_systems.cpp` - demo układów równań
-
-## Autor
-Projekt stworzony na potrzeby laboratoriów z metod numerycznych.
-
-## Licencja
-Projekt edukacyjny - użycie zgodnie z celami dydaktycznymi.
