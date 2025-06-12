@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <functional>  
+#include <iostream>    
 
 namespace NumLib {
     namespace Utilities {
