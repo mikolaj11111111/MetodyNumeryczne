@@ -48,3 +48,127 @@ Biblioteka implementuje podstawowe metody numeryczne w języku C++. Została stw
 - C++ (standard C++17 lub nowszy)
 
 ### Struktura biblioteki
+```
+numerical_lib/
+├── include/           # Pliki nagłówkowe (.h)
+├── src/              # Implementacje (.cpp)
+├── tests/            # Testy jednostkowe
+└── examples/         # Przykłady użycia
+```
+
+## Kompilacja i uruchamianie w Visual Studio 2022
+
+### Krok 1: Otwórz projekt
+1. **Uruchom Visual Studio 2022**
+2. **File → Open → Folder**
+3. **Wybierz folder główny projektu** (zawierający CMakeLists.txt)
+4. **Poczekaj na automatyczną konfigurację CMake**
+
+### Krok 2: Konfiguracja (jeśli potrzebna)
+Jeśli pojawią się błędy konfiguracji:
+1. **Prawym przyciskiem na CMakeLists.txt** w Solution Explorer
+2. **"Usuń pamięć podręczną i skonfiguruj ponownie"**
+
+### Krok 3: Kompilacja
+1. **Prawym przyciskiem na CMakeLists.txt**
+2. **"Kompiluj"**
+3. **Sprawdź wyniki w oknie Output (CMake)**
+
+## Uruchamianie testów
+
+### Metoda 1: Przez Visual Studio
+1. **Po pomyślnej kompilacji**
+2. **Prawym przyciskiem na CMakeLists.txt**
+3. **"Uruchom testy"**
+4. **Wyniki w oknie Output**
+
+### Metoda 2: Developer Command Prompt
+```bash
+cd ścieżka_do_projektu/out/build/x64-Debug
+ctest
+```
+
+### Oczekiwane wyniki testów
+- ✅ **test_approximation** - aproksymacja wielomianowa
+- ✅ **test_differential_equations** - równania różniczkowe
+- ✅ **test_integration** - całkowanie numeryczne
+- ❌ **test_interpolation** - interpolacja (znany błąd - test celowo zawiesza się)
+- ✅ **test_linear_systems** - układy równań liniowych
+- ✅ **test_nonlinear_equations** - równania nieliniowe
+- ✅ **test_utilities** - narzędzia pomocnicze
+
+**Wynik: 6/7 testów powinno przejść pomyślnie (86% sukces)**
+
+## Uruchamianie przykładów
+
+### Po kompilacji dostępne są programy przykładowe:
+
+#### Metoda 1: PowerShell/Command Prompt
+```bash
+cd ścieżka_do_projektu/out/build/x64-Debug
+.\example_interpolation.exe
+.\example_linear_systems.exe
+```
+
+#### Metoda 2: File Explorer
+1. **Przejdź do folderu:** `out/build/x64-Debug/`
+2. **Dwukrotnie kliknij na pliki .exe:**
+   - `example_interpolation.exe`
+   - `example_linear_systems.exe`
+
+### Opis przykładów
+- **example_interpolation.cpp** - demonstracja interpolacji wielomianowej
+- **example_linear_systems.cpp** - rozwiązywanie układów równań liniowych
+
+## Rozwiązywanie problemów
+
+### Problem: Błąd "M_PI niezadeklarowany"
+**Rozwiązanie:** Dodaj na górze pliku przed #include:
+```cpp
+#define _USE_MATH_DEFINES
+```
+
+### Problem: "Cannot find source file: main.cpp"
+**Rozwiązanie:** Usuń z CMakeLists.txt linie odnoszące się do main.cpp
+
+### Problem: Błędy LNK2005 (wielokrotne definicje main)
+**Rozwiązanie:** Użyj poprawionej wersji CMakeLists.txt, która tworzy osobne programy dla każdego testu
+
+### Problem: PowerShell nie rozpoznaje .exe
+**Rozwiązanie:** Użyj `.\nazwa_programu.exe` zamiast `nazwa_programu.exe`
+
+## Makefile (alternatywnie)
+
+Jeśli preferujesz kompilację przez Makefile:
+```bash
+make clean       # Wyczyść pliki
+make all         # Zbuduj bibliotekę i testy
+make test        # Uruchom testy
+```
+
+## Struktura plików
+
+### Pliki nagłówkowe (include/)
+- `differential_equations.h` - równania różniczkowe
+- `integration.h` - całkowanie numeryczne
+- `utilities.h` - narzędzia pomocnicze
+- `approximation.h` - aproksymacja
+- `interpolation.h` - interpolacja
+- `linear_systems.h` - układy równań liniowych
+- `nonlinear_equations.h` - równania nieliniowe
+
+### Implementacje (src/)
+- Odpowiadające pliki .cpp z implementacjami
+
+### Testy (tests/)
+- `test_*.cpp` - testy jednostkowe dla każdego modułu
+
+### Przykłady (examples/)
+- `example_interpolation.cpp` - demo interpolacji
+- `example_linear_systems.cpp` - demo układów równań
+
+## Autor
+Projekt stworzony na potrzeby laboratoriów z metod numerycznych.
+
+## Licencja
+Projekt edukacyjny - użycie zgodnie z celami dydaktycznymi.
