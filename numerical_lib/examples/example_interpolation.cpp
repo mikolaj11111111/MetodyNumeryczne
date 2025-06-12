@@ -28,11 +28,11 @@ int main() {
     double exact_value = std::sin(point);
 
     std::cout << "Punkt interpolacji: " << point << std::endl;
-    std::cout << "Wartość dokładna: " << exact_value << std::endl;
+    std::cout << "Wartosc dokladna: " << exact_value << std::endl;
     std::cout << "Lagrange: " << lagrange_result << std::endl;
     std::cout << "Newton: " << newton_result << std::endl;
-    std::cout << "Błąd Lagrange: " << std::abs(exact_value - lagrange_result) << std::endl;
-    std::cout << "Błąd Newton: " << std::abs(exact_value - newton_result) << std::endl;
+    std::cout << "Blad Lagrange: " << std::abs(exact_value - lagrange_result) << std::endl;
+    std::cout << "Blad Newton: " << std::abs(exact_value - newton_result) << std::endl;
 
     return 0;
 }
