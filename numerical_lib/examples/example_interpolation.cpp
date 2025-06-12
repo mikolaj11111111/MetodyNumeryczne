@@ -2,9 +2,11 @@
 #include <iostream>
 #include <cmath>
 #include<vector>
+#define M_PI 3.14159265358979323846
+
 
 int main() {
-    std::cout << "=== Przyk³ad: Interpolacja ===" << std::endl;
+    std::cout << "=== PrzykÅ‚ad: Interpolacja ===" << std::endl;
 
     // Punkty interpolacji dla funkcji sin(x)
     std::vector<double> x = { 0, M_PI / 4, M_PI / 2, 3 * M_PI / 4, M_PI };
@@ -26,11 +28,11 @@ int main() {
     double exact_value = std::sin(point);
 
     std::cout << "Punkt interpolacji: " << point << std::endl;
-    std::cout << "Wartoœæ dok³adna: " << exact_value << std::endl;
+    std::cout << "WartoÅ›Ä‡ dokÅ‚adna: " << exact_value << std::endl;
     std::cout << "Lagrange: " << lagrange_result << std::endl;
     std::cout << "Newton: " << newton_result << std::endl;
-    std::cout << "B³¹d Lagrange: " << std::abs(exact_value - lagrange_result) << std::endl;
-    std::cout << "B³¹d Newton: " << std::abs(exact_value - newton_result) << std::endl;
+    std::cout << "BÅ‚Ä…d Lagrange: " << std::abs(exact_value - lagrange_result) << std::endl;
+    std::cout << "BÅ‚Ä…d Newton: " << std::abs(exact_value - newton_result) << std::endl;
 
     return 0;
 }
